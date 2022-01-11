@@ -116,7 +116,8 @@ class ImageEditorViewController: UIViewController {
                 case .dismiss:
                     owner.dismiss(animated: true, completion: nil)
                 case let .cropper(imageData, croppedArea, orientation):
-                    guard let viewController = UIStoryboard(name: "ImageCropper", bundle: .main).instantiateInitialViewController() as? ImageCropperViewController else {
+                    let bundle: Bundle = .init(for: Self.self)
+                    guard let viewController = UIStoryboard(name: "ImageCropper", bundle: bundle).instantiateInitialViewController() as? ImageCropperViewController else {
                         return
                     }
                     viewController.modalTransitionStyle = .crossDissolve

@@ -4,7 +4,8 @@ public class ImageEditorMaker {
     public init() {}
     
     public func callAsFunction(images: [JPEGImage], completion: @escaping ([JPEGImage]) -> Void) -> UIViewController? {
-        guard let vc = UIStoryboard(name: "ImageEditor", bundle: .main).instantiateInitialViewController() as? ImageEditorViewController else {
+        let bundle: Bundle = .init(for: Self.self)
+        guard let vc = UIStoryboard(name: "ImageEditor", bundle: bundle).instantiateInitialViewController() as? ImageEditorViewController else {
             return nil
         }
         vc.modalTransitionStyle = .crossDissolve

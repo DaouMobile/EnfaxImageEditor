@@ -19,9 +19,10 @@ class ImageEditorPageViewController: UIPageViewController {
     }
     
     private func makeContentViewController(index: Int) -> ImageEditorContentViewController {
+        let bundle: Bundle = .init(for: Self.self)
         let viewController = UIStoryboard(
             name: "ImageEditor",
-            bundle: .main
+            bundle: bundle
         ).instantiateViewController(
             withIdentifier: "ImageEditorContentViewController"
         ) as! ImageEditorContentViewController
