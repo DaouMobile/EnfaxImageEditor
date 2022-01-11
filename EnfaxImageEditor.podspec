@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                     = 'EnfaxImageEditor'
-  spec.version                  = '1.0.0'
+  spec.version                  = '1.0.1'
   spec.homepage                 = 'https://github.com/DaouMobile/EnfaxImageEditor'
   spec.authors                  = { 'Geonu Jeon' => 'geonu1109@gmail.com' }
   spec.source                   = { :git => 'https://github.com/DaouMobile/EnfaxImageEditor.git', :tag => spec.version.to_s }
@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.swift_version            = '5.0'
   spec.ios.deployment_target    = '11.0'
   spec.source_files             = 'Sources/**/*.swift'
-  spec.resource_bundles         = { 'EnfaxImageEditor' => 'Sources/**/Resource/*' }
+  spec.resources                = 'Sources/**/Resource/*'
   spec.framework                = 'UIKit'
   spec.framework                = 'Vision'
   spec.dependency 'Geometry2D'
