@@ -112,9 +112,13 @@ class ImageEditorViewController: UIViewController {
                 owner.viewModel.clearNavigation()
                 switch navigation {
                 case .pop:
-                    owner.navigationController?.popViewController(animated: true)
+                    DispatchQueue.main.async {
+                        owner.navigationController?.popViewController(animated: true)
+                    }
                 case .dismiss:
-                    owner.dismiss(animated: true, completion: nil)
+                    DispatchQueue.main.async {                    
+                        owner.dismiss(animated: true, completion: nil)
+                    }
                 case let .cropper(imageData, croppedArea, orientation):
                     let bundle: Bundle = .init(for: Self.self)
                     guard let viewController = UIStoryboard(name: "ImageCropper", bundle: bundle).instantiateInitialViewController() as? ImageCropperViewController else {
@@ -125,7 +129,9 @@ class ImageEditorViewController: UIViewController {
                     viewController.setup(imageData: imageData, croppedArea: croppedArea, orientation: orientation) { (imageData, croppedArea) in
                         owner.viewModel.receiveCroppedImage(data: imageData, croppedArea: croppedArea)
                     }
-                    owner.present(viewController, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        owner.present(viewController, animated: true, completion: nil)
+                    }
                 }
             }
             .disposed(by: self.disposeBag)

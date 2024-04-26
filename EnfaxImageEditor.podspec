@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
   spec.name                     = 'EnfaxImageEditor'
-  spec.version                  = '1.0.1'
+  spec.version                  = '1.0.2'
   spec.homepage                 = 'https://github.com/DaouMobile/EnfaxImageEditor'
-  spec.authors                  = { 'Geonu Jeon' => 'geonu1109@gmail.com' }
+  spec.authors                  = { 'DAOU TECH' => 'mobiletest@daou.co.kr' }
   spec.source                   = { :git => 'https://github.com/DaouMobile/EnfaxImageEditor.git', :tag => spec.version.to_s }
   spec.summary                  = 'Image editor for Enfax application'
   spec.swift_version            = '5.0'
